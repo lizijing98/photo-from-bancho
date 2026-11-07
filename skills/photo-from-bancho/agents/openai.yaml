@@ -1,0 +1,4 @@
+interface:
+  display_name: "PHOTO_FROM_BANCHO/在班乔寿司打卡"
+  short_description: "将实拍食物变成戴夫风格像素动态，并与原照片拼成 3:4 打卡图"
+  default_prompt: "使用 $photo-from-bancho，将这张食物照片制作成班乔寿司手机动态，并输出上方实拍、下方模拟截图的 3:4 拼图。"

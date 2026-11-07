@@ -1,0 +1,28 @@
+photos/
+inputs/
+screenshots/
+output/
+outputs/
+private/
+dist/
+
+# 本地凭据、环境及缓存
+.env
+.env.*
+*.pem
+*.key
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+
+# Agent 和编辑器的本地设置
+.agents/
+.claude/
+.workbuddy/
+.codex/
+.dsh/
+.idea/
+.vscode/
