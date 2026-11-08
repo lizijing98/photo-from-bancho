@@ -33,6 +33,6 @@ py -3 -m venv "VENV_DIR"
 & "VENV_DIR\Scripts\python.exe" -c "from PIL import Image, ImageOps; print(Image.__version__)"
 ```
 
-安装和复查成功后，用该虚拟环境的 Python 执行 `trim_screenshot.py` 和 `compose.py`。不需要激活虚拟环境，也不需要修改全局 Python 或用户已有项目的依赖配置。
+安装和复查成功后，用该虚拟环境的 Python 执行 `replace_feed.py` 和 `compose.py`。可直接调用该解释器路径，无需激活虚拟环境。
 
 若没有合格的 Python、无法执行本地命令，或因网络和权限限制无法安装，说明具体缺项并保留已完成的产物。遵循当前平台的权限流程，不擅自安装系统组件、配置 API 密钥或切换付费服务。
