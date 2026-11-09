@@ -3,7 +3,7 @@ name: photo-from-bancho
 description: 将真实食物照片制作成《潜水员戴夫》COOKSTA 风格的像素手机动态，再与原照片上下拼成 3:4 打卡图。适用于“在班乔寿司打卡”、PHOTO_FROM_BANCHO 或提供食物照片并要求制作戴夫风格打卡图的请求。
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # 在班乔寿司打卡（PHOTO_FROM_BANCHO）
@@ -24,7 +24,7 @@ metadata:
 
 检查照片，提取食物数量、形状、配料、餐具、光线和取景特征。使用当前 Agent 已配置的图像编辑工具，并遵守其调用和数据传输规则。
 
-默认使用**精确保真模式**。按 [场景参考表](references/scenes.md) 选择用户指定或与所选组合匹配的真实截图。从用户提供的参考目录或 Skill 的 `assets/scenes/` 中查找。保留原始截图作为底图，生成手机动态素材，再按 [动态替换流程](references/feed-compositing.md) 用脚本贴回。只有当前动态的料理图、头像、用户名、点赞数、评论和 Tags 可以变化。其余区域、画布尺寸、游戏控件与原截图一致。
+默认使用**精确保真模式**。按 [场景参考表](references/scenes.md) 选择用户指定或与所选组合匹配的真实截图。从用户提供的参考目录或 Skill 的 `assets/scenes/` 中查找。保留原始截图作为底图，生成手机动态素材，再按 [动态替换流程](references/feed-compositing.md) 用脚本贴回。**默认去掉截图底部的「B 关闭」及其半透明底框**。只改当前动态和关闭提示所在区域，保留原始画布尺寸、A 控件及其余像素。
 
 缺少对应真实截图时，请用户提供底图，或在用户明确接受近似背景后按 [场景参考表](references/scenes.md) 的兜底方式生成。缺少图像工具时，可提供填好的动态生成提示词，收到生成素材后再按上述流程合成。
 
@@ -40,7 +40,7 @@ Leave clear space for the original A control. Omit the phone frame, navigation,
 restaurant or ocean background, and B close prompt from the patch.
 ```
 
-检查料理、文字、点赞数和换行，并比对最终模拟截图的动态区外像素及保护区。实际交付使用脚本合成后的 PNG。
+检查料理、文字、点赞数和换行，确认独立截图和拼图中都没有「B 关闭」及其底框。比对动态区和关闭提示区之外的像素及保护区。实际交付使用脚本合成后的 PNG。
 
 ## 拼接
 
